@@ -25,7 +25,7 @@ const VideoPlayer = ({ location }) => {
     const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
     const [showBlocker, setShowBlocker] = useState(false);
 
-    const [hideEditor, setHideEditor] = useState(true); // Initialize to true
+    const [hideEditor, setHideEditor] = useState(false); // Initialize to true
 
     // const [hideEditor, setHideEditor] = useState(true); // Default value set to true
 
