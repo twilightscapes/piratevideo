@@ -32,7 +32,7 @@
       "startUrl": "/",
       "showPopup": false,
       "ShowDisclaimer": false,
-      "showBranding": false,
+      "showBranding": true,
       "showFeature": false,
       "showResume": false,
       "showLocation": false,
