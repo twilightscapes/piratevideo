@@ -423,7 +423,7 @@ display:'flex', justifyContent:'center', maxHeight:'80px !important', height:'15
   return (
     <Layout>
       <Helmet>
-        <body id="body" className="homepage" />
+        <body id="body" className="homepage nope" />
       </Helmet>
 
       <Seo
