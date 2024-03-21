@@ -30,7 +30,7 @@ const PWAInstaller = () => {
 
   return (
     
-    <div id="pwabanner" style={{position:'fixed', bottom:'0', display: isInstalled ? "none" : "flex",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)', marginBottom:'0px', padding:'0px 40px 15px 0', width:'100vw', zIndex:'10' }}>
+    <div id="pwabanner" style={{position:'fixed', bottom:'0', display: isInstalled ? "none" : "none",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)', marginBottom:'0px', padding:'0px 40px 15px 0', width:'100vw', zIndex:'10' }}>
 
       <button
         className="flag1 bug1"
@@ -42,7 +42,7 @@ const PWAInstaller = () => {
           fontSize: "clamp(3rem, 3vw, 3rem)",
           position: "absolute",
           top: "24px",
-          right: "-10px",
+          right: "10px",
           width: "",
           height: isInstalled ? "60px" : "60px",
           zIndex: "4",
@@ -77,32 +77,23 @@ const PWAInstaller = () => {
 
       {/* <div style={{fontSize:'60px', display:'grid', placeContent:'center', height:'60px', margin:'0 2vw', lineHeight:'100%'}}>&#x2620;</div>  */}
 
-                <div className="font" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 40px', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: 'clamp(.8rem,1.2vw,1rem)', position:'relative'}}>
-
-                <span style={{position:'absolute', display:'block', left:'1%',}}><MdOutlineIosShare style={{fontSize:'30px'}} /></span>
-
-                  <span style={{display:'block'}}>Install the {companyname} Web app</span>
-
-                  <span style={{display:'block'}}>"Add To Home Screen"</span>
-
-                
-
-                </div>
-                
-                
-  
-                
-
-    
-
-      {/* <span style={{fontSize:'50px'}}>&#x2620;</span>
-
       
-      Please Install Our Web App
-        "Save to your Home Screen" to install free Web App */}
+      <div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: 'clamp(.8rem,1.2vw,1rem)', position:'relative'}}>
+
+To Install: 
+<div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'30px'}} /></div>
+
+  + <span style={{display:'block'}}>"Add To Home Screen"</span>
 
 
-    </div>
+
+</div>
+
+
+
+</div>
+
+
   );
 };
 

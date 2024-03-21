@@ -2,19 +2,19 @@
   "meta": {
     "iconimage": "/assets/logo.svg",
     "companyname": "Pirate",
-    "siteUrl": "https://piratesocial.org",
+    "siteUrl": "https://pirateyoutube.com",
     "featureOptions": {
       "showDefault": true,
-      "showArchive": false,
+      "showArchive": true,
       "showSearch": false,
       "showDates": false,
       "showSocial": false,
+      "showProfile": false,
+      "showHomePosts": false,
       "showTitles": false,
       "showfooter": false,
       "showSwipe": false,
-      "showVideoPlayer": true,
-      "showHomePosts": false,
-      "showProfile": false
+      "showVideoPlayer": true
     },
     "twitterUsername": "toddlambert",
     "titleDefault": "PIRATE",
@@ -27,21 +27,21 @@
       "showMagicSearch": true
     },
     "proOptions": {
-      "showModals": true,
+      "showModals": false,
       "showContact": false,
+      "showResume": false,
       "startUrl": "/",
       "showPopup": false,
-      "ShowDisclaimer": false,
-      "showBranding": true,
-      "showFeature": false,
-      "showResume": false,
       "showLocation": false,
+      "ShowDisclaimer": false,
+      "showBranding": false,
+      "showFeature": false,
       "showLegal": false,
       "showConsent": false,
       "showPWA": true
     },
     "titleTemplate": "%s",
-    "title": "PIRATE SOCIAL",
+    "title": "Pirate YouTube",
     "language": {
       "dicContact": "Contact",
       "dicSignUpText": "Sign Up - Enter your email",
@@ -80,11 +80,11 @@
     },
     "image": "/assets/pirate-logo.svg",
     "navOptions": {
-      "showNav": false,
+      "showNav": true,
       "showNav2": false,
       "showFooterMenu": false
     },
-    "description": "Pirate Social media for the people by the people",
+    "description": "Pirate Video for the masses",
     "icon512": "/assets/pirate-icon.svg"
   }
 }
