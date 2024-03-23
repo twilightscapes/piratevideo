@@ -29,6 +29,7 @@ const useSiteMetadata = () => {
             showVideoPlayer
             showHomePosts
             showProfile
+            defaultCollection
           }
 
           proOptions{
@@ -89,6 +90,7 @@ const useSiteMetadata = () => {
             dicConfirmation
             dicProfileAudioText
             dicProfileAudioActionText
+            dicGallery
           }
         }
       }

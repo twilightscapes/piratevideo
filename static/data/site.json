@@ -14,7 +14,8 @@
       "showTitles": false,
       "showfooter": false,
       "showSwipe": false,
-      "showVideoPlayer": true
+      "showVideoPlayer": true,
+      "defaultCollection": "Favorites"
     },
     "twitterUsername": "toddlambert",
     "titleDefault": "PIRATE",
@@ -76,7 +77,8 @@
       "dicCategory": "Category",
       "dicPlayMultimedia": "Play Multimedia",
       "dicEmail": "your@email.com",
-      "dicViewArchive": "View Archive"
+      "dicViewArchive": "View Archive",
+      "dicGallery": "Choose Collection"
     },
     "image": "/assets/pirate-logo.svg",
     "navOptions": {

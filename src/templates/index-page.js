@@ -547,8 +547,8 @@ style={{height:'auto', width:'100dvw', maxHeight:'100dvh', position:'relative', 
 
 
   <div className=" mob print" style={{ position:'sticky', top:'0', fontSize: 'clamp(1rem, 1.5vw, 3.2rem)' }}>
-      <h1 className="title1" style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)' }}>{frontmatter.profTitle}</h1>
-      <h2 className="tagline1" style={{ fontSize: 'clamp(1.2rem, 1.8vw, 3.2rem)' }}>
+      <h1 className="title1" style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', textWrap:'balance' }}>{frontmatter.profTitle}</h1>
+      <h2 className="tagline1" style={{ fontSize: 'clamp(1.2rem, 1.8vw, 3.2rem)', textWrap:'balance' }}>
         {frontmatter.tagline}
       </h2>
       <div style={{ fontSize: 'clamp(1.2rem, 1.8vw, 3.2rem)' }} className="description" dangerouslySetInnerHTML={{ __html: html }} />
@@ -579,7 +579,7 @@ style={{height:'auto', width:'100dvw', maxHeight:'100dvh', position:'relative', 
   fontSize:'clamp(1rem, 1.4vw, 3.2rem)',
   background:'rgba(0,0,0,0.50)',
   backdropFilter:'blur(8px)',
-  border:'10px double var(--theme-ui-colors-buttonHoverBg)', borderRadius:'var(--theme-ui-colors-borderRadius)',
+  border:'0px double var(--theme-ui-colors-buttonHoverBg)', borderRadius:'var(--theme-ui-colors-borderRadius)',
   textShadow:'0 2px 0px #000',
   maxWidth:'70%'
 }}>
