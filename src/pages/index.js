@@ -25,7 +25,7 @@ const HomePage = ({ location }) => {
         <body id="body" className="youtube" />
       </Helmet>
       <SeoWrapper location={location} />
-      <div className='player-wrapper' style={{height:'100dvh'}}>
+      <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
         {!isRunningStandalone() ? (

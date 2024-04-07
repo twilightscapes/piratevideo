@@ -828,7 +828,7 @@ background: 'var(--theme-ui-colors-headerColor)',
         transition: 'all .4s ease-in-out',
     }}
     width="100%"
-    height="calc(100vh - 48px)"
+    height="100%"
     url={youtubelink}
     playing={isPlaying}
     controls={controls}
