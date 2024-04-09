@@ -26,11 +26,16 @@ const VideoPlayer = ({ location }) => {
     const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
     const [showBlocker, setShowBlocker] = useState(false);
 
-    const [hideEditor, setHideEditor] = useState(true); // Initialize to true
-
-    // const [hideEditor, setHideEditor] = useState(true); // Default value set to true
+    const [hideEditor, setHideEditor] = useState(false); // Initialize to true
 
 
+        // Function to parse query string and update state
+    const parseQueryString = () => {
+        const searchParams = new URLSearchParams(location.search);
+        const hideEditorParam = searchParams.get('hideEditor');
+        setHideEditor(hideEditorParam === 'true');
+    };
+    
 // Function to handle changes in the custom image URL input
 const handleCustomImageChange = (event) => {
     const { value } = event.target;
@@ -39,7 +44,6 @@ const handleCustomImageChange = (event) => {
     // Update query string with custom image URL
     updateQueryString({ customImage: value });
 };
-
 
 
     const [seoTitle, setSeoTitle] = useState(seoTitleParam);
@@ -239,14 +243,9 @@ const handleCopyAndShareButtonClick = async () => {
     });
 
     // Update the query string
-    // const newParams = new URLSearchParams(queryParamsObject);
-
     const queryString = Object.keys(queryParamsObject)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParamsObject[key])}`)
         .join('&');
-
-    // Construct the URL
-    // const newUrl = `${window.location.origin}${window.location.pathname}video?${newParams.toString()}`;
 
     const fullUrl = `${window.location.origin}${window.location.pathname}?${queryString}`;
 
@@ -290,52 +289,15 @@ const handleCopyAndShareButtonClick = async () => {
 const updateQueryString = (values) => {
     // This function does nothing to prevent updating the query string
 };
-    // Function to update query string based on provided values
-    // const updateQueryString = (values) => {
-    //     const { video, start, stop, loop, mute, controls, autoplay, seoTitle, hideEditor, showBlocker } = values;
     
-    //     // Format start and stop values only if they are not NaN
-    //     const formattedStart = isNaN(parseFloat(start)) ? "" : parseFloat(start).toFixed(2);
-    //     const formattedStop = isNaN(parseFloat(stop)) ? "" : parseFloat(stop).toFixed(2);
-    
-    //     // Convert autoplay to string
-    //     const autoplayValue = autoplay ? 'true' : 'false';
-    
-    //     // Construct the base URL with mandatory parameters
-    //     let newUrl = `${window.location.pathname}?video=${encodeURIComponent(video)}&start=${encodeURIComponent(formattedStart)}&stop=${encodeURIComponent(formattedStop)}&loop=${loop}&mute=${mute}&controls=${controls}&autoplay=${autoplayValue}`;
-    
-    //     if (seoTitle !== undefined) {
-    //         newUrl += `&seoTitle=${encodeURIComponent(seoTitle)}`;
-    //     }
-    
-    //     if (hideEditor !== undefined) {
-    //         newUrl += `&hideEditor=${hideEditor ? 'true' : 'false'}`;
-    //     }
-    
-    //     if (showBlocker !== undefined) {
-    //         newUrl += `&showBlocker=${showBlocker ? 'true' : 'false'}`;
-    //     }
-    
-    //     window.history.pushState({}, '', newUrl);
-    // };
     
 
-
-
-
-    // const handleHideEditorChange = (event) => {
-    //     const newValue = event.target.checked; // Use the checked value directly
-    //     setHideEditor(!newValue); // Invert the value for state update
-    //     updateQueryString({ hideEditor: newValue ? 'false' : 'true' }); // Update query string accordingly
-    // };
+    const handleHideEditorChange = (event) => {
+        const newValue = event.target.checked; // Use the checked value directly
+        setHideEditor(!newValue); // Invert the value for state update
+        updateQueryString({ hideEditor: newValue ? 'true' : 'false' }); // Update query string accordingly
+    };
     
-
-    // Function to handle show blocker change
-    // const handleShowBlockerChange = (event) => {
-    //     const newValue = event.target.checked;
-    //     setShowBlocker(newValue);
-    //     updateQueryString({ showBlocker: newValue ? 'true' : 'false' });
-    // };
 
 
 // Function to handle autoplay change
@@ -381,18 +343,16 @@ const handleAutoplayChange = (event) => {
         setExpanded(false);
     };
     
-
     // JSX rendering
     return (
         <>
               <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', height:'auto',  width: '100vw', transition: 'all .4s ease-in-out' }}>
 
-
-
             {!isRunningStandalone() ? (
 
 <div className="font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', transition: 'all .4s ease-in-out', marginTop: showNav ? '0' : '0',
-//  height: hideEditor ? '0' : '50px', 
+height:'0',
+ height: hideEditor ? '0' : '50px', 
 // background: 'var(--theme-ui-colors-headerColor)',
  }}>
 
@@ -410,12 +370,13 @@ const handleAutoplayChange = (event) => {
         gap: '2vw',
         padding: '4px 20px',
         width: '100%',
-        // transform: hideEditor ? 'translateY(-100%)' : 'none',
+        transform:'none',
+        transform: hideEditor ? 'translateY(-100%)' : 'none',
         transition: 'transform 0.4s ease-in-out',
         background: 'var(--theme-ui-colors-headerColor)',
         // color:'--theme-ui-colors-headerColorText'
-        
-        // height: hideEditor ? '0' : 'auto'
+        height:'0',
+        height: hideEditor ? '0' : 'auto'
 
       }}
     >
@@ -503,7 +464,10 @@ const handleAutoplayChange = (event) => {
                                     />
                                 </label>
 
-{/* <label htmlFor="hide-editor-checkbox" style={{textAlign:'center', fontSize:'85%', display:'flex', flexDirection:'column', alignItems:'center', opacity: isVideoActive ? 1 : 0.5}}>Editor:
+
+{showPro ? (
+
+<label htmlFor="hide-editor-checkbox" style={{textAlign:'center', fontSize:'85%', display:'flex', flexDirection:'column', alignItems:'center', opacity: isVideoActive ? 1 : 0.5}}>Editor:
 <input
     type="checkbox"
     id="hide-editor-checkbox"
@@ -513,56 +477,13 @@ const handleAutoplayChange = (event) => {
     onChange={handleHideEditorChange}
     checked={!hideEditor} // Invert the state here
 />
-</label> */}
-                
+</label>
+          ) : (
+            ""
+        )}  
 
-{/* <div style={{ display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', padding:'0 3px 5px 3px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'5px' }}> */}
+
 </div>
-
-
-
-
-
-
-        
-
-
-
-{/* <label  title="User Interaction Blocker - Keep people from clicking on anything on the page. Note, view will not be able to play videos that are NOT set to mute and autoplay - USE WITH CAUTION" htmlFor="blocker-checkbox"  style={{textAlign:'center', fontSize:'60%', display:'none', flexDirection:'column', alignItems:'center', opacity: 'isVideoActive ? 1 : 0.5'}}>Block:
-    <input
-        aria-label="Block user interactions"
-        id="blocker-checkbox"
-        type="checkbox"
-        className="youtubelinker"
-        name="showBlocker"
-        checked={showBlocker}
-        onChange={handleBlockerChange}
-        onChange={handleShowBlockerChange} checked={showBlocker}
-        disabled={!isVideoActive}
-        style={{maxWidth:'50px'}}
-    />
-</label> */}
-
-
-
-{/* </div> */}
-
-{/* <input
-    type="text"
-    name="seoTitle" 
-    title="Enter Video Title"
-    value={seoTitle}
-    onChange={(e) => setSeoTitle(e.target.value)} // Add this onChange handler
-    placeholder="Video Title" 
-    style={{ padding: '.4vh .3vw', minWidth:'110px', width: '100%', maxWidth: '800px', textAlign:'center', fontSize: 'clamp(.8rem,1.4vw,1rem)', background:'rgba(0,0,0,.1)', transition: 'all .4s ease-in-out' }}
-    aria-label="Enter Video Title"
-    className="youtubelinker"
-    disabled={!isVideoActive}
-/> */}
-
-
-
-
 
 <div id="timers" style={{ display: 'flex', flexDirection:'row', gap: '2vw', alignItems: 'center', width:'100%', marginLeft:'',}}>
 <input
@@ -605,7 +526,11 @@ const handleAutoplayChange = (event) => {
 
 
 
+{showPro ? (
 
+
+
+<div style={{ width: '100%', minWidth:'110px', marginRight: expanded ? '' : '', border: expanded ? '1px solid var(--theme-ui-colors-siteColor)' : 'inherit', height:'30px', display:'flex', gap:'2vw', alignItems:'center' }}>
 <input
                 type="text"
                 name="customImage" 
@@ -621,7 +546,7 @@ const handleAutoplayChange = (event) => {
 
             
 
-                    <div style={{ width: '100%', minWidth:'110px', marginRight: expanded ? '' : '', border: expanded ? '1px solid var(--theme-ui-colors-siteColor)' : 'inherit', height:'30px', display:'flex', alignItems:'center' }}><input
+                    <input
             id="seoTitle"
             type="text"
             name="seoTitle"
@@ -655,7 +580,9 @@ const handleAutoplayChange = (event) => {
         />
 </div>
 
-
+) : (
+    ""
+)} 
 
 <div style={{display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', padding:'3px 10px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)', opacity: isVideoActive ? 1 : 0.5}}>
     

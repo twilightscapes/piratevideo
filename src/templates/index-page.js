@@ -265,10 +265,7 @@ const playerRef = useRef(null);
       ""
     
   )}
-    
-  
-    
-    
+
     <div className="" style={{maxHeight:'100dvh', width:'100dvw', height:'auto', overflow:'visible',position:'absolute', top:'0', zIndex:'',}}>
 {UnderlayImage ? (
             <GatsbyImage
@@ -282,8 +279,10 @@ const playerRef = useRef(null);
             ""
           )}
 </div>
-    
-  
+
+
+
+http://localhost:8000/?video=https%3A%2F%2Fwww.youtube.com%2Flive%2FkYiSnlc-XrE%3Fsi%3D0hMPOoPqR53deng_&loop=false&mute=false&controls=true&autoplay=false&showBlocker=false
     
     {/*  SPECIAL CONTENT */}
     
@@ -309,6 +308,7 @@ const playerRef = useRef(null);
       )
     }
   
+
     
     // const YouTubeStart = frontmatter.youtube.youtubestart ? frontmatter.youtube.youtubestart : null;
     // const YouTubeEnd = frontmatter.youtube.youtubeend
