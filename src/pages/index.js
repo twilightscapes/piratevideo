@@ -51,7 +51,7 @@ const HomePage = ({ location }) => {
         }}
       >
 
-<StaticImage src="../../static/assets/screen-mirroring-badges.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-10vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} />
+{/* <StaticImage src="../../static/assets/screen-mirroring-badges.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-10vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
 
 {/* <StaticImage src="../../static/assets/free-star.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-28vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
 
@@ -97,7 +97,7 @@ const HomePage = ({ location }) => {
 {/* <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4' */}
 
 
-              <ReactPlayer ref={playerRef} url='/assets/pirateyoutube-walkthru.mp4'
+              <ReactPlayer ref={playerRef} url='https://youtu.be/dOHZv-hpIhA'
               config={{
     youtube: {
       playerVars: { showinfo: 0, autoplay: 1, mute: 1 }
@@ -109,8 +109,8 @@ const HomePage = ({ location }) => {
   autoPlay
   muted
   style={{
-    width:'100%',
-    height:'100%',
+    minWidth:'60vw',
+    // minHeight:'55vh',
   }}
     width="100%"
     height="100%"

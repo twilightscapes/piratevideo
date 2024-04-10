@@ -157,7 +157,6 @@ const handleCustomImageChange = (event) => {
             setShowBlocker(showBlockerParam === 'true');
         }
 
-        http://localhost:8000/?video=https%3A%2F%2Fwww.youtube.com%2Flive%2FkYiSnlc-XrE%3Fsi%3D0hMPOoPqR53deng_&start=24.55&stop=27.89&loop=true&mute=true&controls=true&autoplay=false&seoTitle=Fuck%20this%20&hideEditor=true
         // Update query parameters with default values
         updateQueryString({
             video: videoUrlParam,
@@ -325,7 +324,7 @@ const updateQueryString = (values) => {
 
     const handleHideEditorChange = (event) => {
         const newValue = event.target.checked; // Use the checked value directly
-        setHideEditor(!newValue); // Invert the value for state update
+        // setHideEditor(!newValue); // Invert the value for state update
         updateQueryString({ hideEditor: newValue ? 'true' : 'false' }); // Update query string accordingly
     };
     
@@ -517,7 +516,7 @@ height:'0',
     className="youtubelinker"
     disabled={!isVideoActive}
     onChange={handleHideEditorChange}
-    checked={!hideEditor} // Invert the state here
+    // checked={!hideEditor} // Invert the state here
 />
 </label>
           ) : (
@@ -526,9 +525,6 @@ height:'0',
 
 
 </div>
-
-
-
 
 
 
