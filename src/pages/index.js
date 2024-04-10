@@ -79,13 +79,13 @@ const HomePage = ({ location }) => {
 
 
 
-<div style={{fontSize:'clamp(1rem, 1.8vw, 3.2rem)', position:'relative', padding:'2vh 0'}}>
+<div style={{fontSize:'clamp(1rem, 2vw, 3.2rem)', position:'relative', padding:'2vh 0'}}>
 
-              Watch videos on your tv without ads!
+<span style={{fontSize:'110%'}}>Watch videos on your tv without ads!</span>
               <br /><br />
-              create shareable social video links
+              <span style={{fontSize:'80%'}}>Create your own shareable social video links with
               <br /><br />
-              <span style={{fontSize:'80%'}}>with custom thumbnail, titles, and start/stop times</span>
+               custom thumbnail, titles, and start/stop times</span>
 
 
 
@@ -110,14 +110,14 @@ const HomePage = ({ location }) => {
   muted
   style={{
     minWidth:'',
-    // minHeight:'55vh',
+    minHeight:'45vh',
   }}
     width="100%"
     height="100%"
               />
 
 <span style={{ margin: "2vh auto 5px auto", fontSize: "120%" }}>Install Pirate Video NOW!</span>
-<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '120%', position:'relative'}}>
+<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '100%', position:'relative'}}>
 
 Click: 
 <div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'24px'}} /></div>
