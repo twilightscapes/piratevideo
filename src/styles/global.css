@@ -970,7 +970,7 @@ body.contactpage .ReactModal__Content{padding-top:10vh !important;}
 
   #menu {flex-direction: column !important;}
   
-  body.homepage {height:inherit ; border:0px solid yellow; padding-top:80px;}
+  body.homepage {height:inherit ; border:0px solid yellow; padding-top:0px;}
 
   #missioncontrol {position:absolute; right:2vw; top:10px; gap:5vw ;}
 
@@ -1323,14 +1323,14 @@ body:has(.ReactModal__Content) {overflow-x:hidden !important; overflow-y:hidden 
 
 
 
-html:has body.youtube{position:fixed !important; overflow: hidden !important;}
+/* html:has body.youtube{position:fixed !important; overflow: hidden !important;}
 
-  body.youtube{position:fixed !important; overflow: hidden !important;}
+  body.youtube{position:fixed !important; overflow: hidden !important;} */
 
   body.youtube header.header {height:0 !important;}
   /* #VideoPlayer {position:fixed; overflow-y: hidden;} */
 
-
+/* body.youtube .promo{margin-top:80px;} */
 
 
 

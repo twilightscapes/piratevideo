@@ -19,6 +19,11 @@ const HomePage = ({ location }) => {
             return ;
         }
 
+          // Get query parameter value
+  const queryParams = new URLSearchParams(location.search);
+  const hideEditor = queryParams.get('hideEditor') === 'true';
+
+  
   return (
     <Layout>
       <Helmet>
@@ -28,18 +33,18 @@ const HomePage = ({ location }) => {
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!isRunningStandalone() ? (
+        {!hideEditor && !isRunningStandalone() && (
 <>
 
         <div
         className="menusnapp"
         style={{
-          position: "absolute",
+          position: "relative",
           zIndex: "0",
-          top: "6vh",
+          top: "",
           gap: "0",
-          padding: "2vh 2vw",
-          alignItems: "center",
+          padding: "5vh 0",
+          alignItems: "start",
           animation:'fadeIn 1s forwards',
           animationDelay:'1s',
           opacity:'0',
@@ -116,13 +121,13 @@ const HomePage = ({ location }) => {
     height="100%"
               />
 
-<span style={{ margin: "2vh auto 5px auto", fontSize: "120%" }}>Install Pirate Video NOW!</span>
+<span style={{ margin: "2vh auto 5px auto", fontSize: "120%" }}>Pirate Video is a Personal Web App (PWA) - install for FREE!</span>
 <div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '100%', position:'relative'}}>
 
-Click: 
+Just click: 
 <div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'24px'}} /></div>
 
-  <span style={{fontSize:'120%'}}>+</span> <span style={{display:'block'}}>"Add To Home Screen"</span>
+  <span style={{fontSize:'120%'}}> and </span> <span style={{display:'block'}}>"Add To Home Screen"</span>
 
 
 
@@ -167,9 +172,7 @@ Click:
       </div>
       </>
 
-) : (
 
-""
 
   )}
 
