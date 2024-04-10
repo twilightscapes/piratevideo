@@ -22,7 +22,7 @@ const HomePage = ({ location }) => {
   return (
     <Layout>
       <Helmet>
-        <body id="body" className="youtube" />
+        <body id="body" className="homepage youtube" />
       </Helmet>
       <SeoWrapper location={location} />
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
@@ -64,7 +64,7 @@ const HomePage = ({ location }) => {
               <span style={{ margin: "2vh auto", fontSize: "160%" }}>Install Now Free!</span>
               <br /><br /><br />
           </div> */}
-          <div className="flexcheek mob2 print" style={{ position: "relative", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
+          <div className="flexcheek mob2 print" style={{ position: "relative", top: "", minWidth: "90vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
 
 
 
@@ -109,7 +109,7 @@ const HomePage = ({ location }) => {
   autoPlay
   muted
   style={{
-    minWidth:'60vw',
+    minWidth:'',
     // minHeight:'55vh',
   }}
     width="100%"

@@ -1335,7 +1335,7 @@ html:has body.youtube{position:fixed !important; overflow: hidden !important;}
 
 
   body.youtube #header,
-  body.youtube footer,
+  /* body.youtube footer, */
   body.youtube #menu,
   body.youtube #gobacker,
   body.youtube #menuicon,
