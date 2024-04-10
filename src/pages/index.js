@@ -53,7 +53,7 @@ const HomePage = ({ location }) => {
 
 <StaticImage src="../../static/assets/screen-mirroring-badges.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-10vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} />
 
-<StaticImage src="../../static/assets/free-star.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-28vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} />
+{/* <StaticImage src="../../static/assets/free-star.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-28vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
 
 
         <div id="" className="flexbutt font" style={{ display: "", gap: "", justifyContent: "center", alignItems: "center", margin: "0 0", padding: "0", position: "relative", width: "100vw" }}>
@@ -117,7 +117,7 @@ const HomePage = ({ location }) => {
               />
 
 <span style={{ margin: "2vh auto 5px auto", fontSize: "120%" }}>Install Pirate Video NOW!</span>
-<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 40px', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '120%', position:'relative'}}>
+<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '120%', position:'relative'}}>
 
 Click: 
 <div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'24px'}} /></div>
