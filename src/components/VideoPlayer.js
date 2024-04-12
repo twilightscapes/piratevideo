@@ -394,7 +394,7 @@ const handleAutoplayChange = (event) => {
               
     
 
-            {!isRunningStandalone() ? (
+
 
 <div className="font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', transition: 'all .4s ease-in-out', marginTop: showNav ? '0' : '0',
 height:'0',
@@ -729,106 +729,6 @@ height:'0',
 
 
 
-
-                
-    ) : (
-
-
-<div className="font public1" style={{display: hidePirate ? 'flex' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
-// height: hideEditor ? '0' : '50px', 
-// background: 'var(--theme-ui-colors-headerColor)',
- }}>
-
-<form 
-className="youtubeform1 frontdrop1" 
-onSubmit={handleSubmit}  
-id="youtubeform" 
-name="youtubeform" 
-style={{
-display: 'flex',
-justifyContent: 'center',
-flexWrap: 'wrap',
-alignItems: 'center',
-width: '100vw',
-margin: '0 auto',
-gap: '2vw',
-padding: '1vh 2vw',
-// transform: hideEditor ? 'translateY(-100%)' : 'none',
-transition: 'transform 0.4s ease-in-out',
-background: 'var(--theme-ui-colors-headerColor)',
-// height: hideEditor ? 'auto' : '0'
-
-}}
->
-
-<div id="bigbox" style={{ display: 'flex', flexDirection:'column', gap: '4px', alignItems: 'center', width:'100%', border:'0px solid red' }}>
-
-<div id="pastebox" style={{ display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', width:'', minWidth:'90%', justifyContent:'center', margin:'0 auto', border:'0px solid red' }}>
-
-
-<input
-                                ref={inputElement}
-                                id="youtubelink-input"
-                                type="text"
-                                name="video"
-                                title="Paste Video Link"
-                                value={youtubelink}
-                                onChange={handleInputChange}
-                                style={{ padding: '.5vh .4vw', minWidth:'85px', width: '100%', maxWidth: '400px', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', outline:'1px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)' }}
-                                placeholder="Paste Video Link"
-                                className="youtubelinker"
-                                aria-label="Paste Link To Video"
-                            />
-
-                            <button aria-label="Reset" type="reset" onClick={handleReset} disabled={!isVideoActive} style={{ color: '', fontSize: 'clamp(.8rem,1vw,1rem)', fontWeight: 'bold', textAlign: 'left', width: '20px', margin: '', opacity: isVideoActive ? 1 : 0.5 }}>
-                                Reset
-                            </button>
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-                        
-                    
-                    </form>
-
-
-                    {isRunningStandalone() && (
-                            <div style={{position:'fixed', left:'', bottom:'0', zIndex:'2', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', gap:'1.5vw', width:'100vw', padding:'10px 0 2vh 0', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)'}}>
-                                    <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
-                                        <TfiYoutube style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-                                    <a title="Open Facebook" aria-label="Open Facebook" href="https://www.facebook.com/watch/">
-                                        <FaFacebookSquare style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-                                    <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory">
-                                        <FaTwitch style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-                                    <a title="Open Sound CLoud" aria-label="Open Sound Cloud" href="https://soundcloud.com/discover">
-                                        <ImSoundcloud2 style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-                                    <a title="Open Vimeo" aria-label="Open Vimeo" href="https://vimeo.com/watch">
-                                        <FaVimeo style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-                                    <a title="Open Daily Motion" aria-label="Open Daily Motion" href="https://www.dailymotion.com/">
-                                        <FaDailymotion style={{ fontSize: '30px', opacity:'.8' }} />
-                                    </a>
-
-                                    
-                                    
-                                    
-                                </div>
-                             )}
-
-                    </div>
-    )}
 
 
 
