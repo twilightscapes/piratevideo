@@ -23,17 +23,9 @@ const HomePage = ({ location }) => {
           // Get query parameter value
   const queryParams = new URLSearchParams(location.search);
   const hidePirate = queryParams.get('hidePirate') === 'true';
+  const proParam = queryParams.get('pro') === 'true';
 
-
-  const showPro = useState(() => {
-    const storedShowPro = localStorage.getItem('showPro');
-    return storedShowPro !== null ? JSON.parse(storedShowPro) : false;
-});
-
-// Effect to update local storage when showPro changes
-useEffect(() => {
-    localStorage.setItem('showPro', JSON.stringify(showPro));
-}, [showPro]);
+  const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
   
   return (
     <Layout>
@@ -44,7 +36,7 @@ useEffect(() => {
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!hidePirate && !isRunningStandalone() && (
+        {!hidePirate && !showPro && !isRunningStandalone() && (
         
 <>
 
