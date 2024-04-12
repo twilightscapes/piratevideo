@@ -1,6 +1,6 @@
 import React from "react";
-// import Seo from "../components/seo";
-// import Layout from "../components/siteLayout";
+import Seo from "../components/seo";
+import Layout from "../components/siteLayout";
 import { Link } from "gatsby"
 import { RiArrowLeftSLine, RiCheckboxCircleLine } from "react-icons/ri"
 
@@ -8,8 +8,8 @@ import { RiArrowLeftSLine, RiCheckboxCircleLine } from "react-icons/ri"
 const NoThanks = () => {
       return (
 
-//  <Layout className="thanks-page">
-//  <Seo title={`Thanks for being a Pirate!`} />
+ <Layout className="thanks-page">
+ <Seo title={`Thanks for being a Pirate!`} />
 
 <section className="outer section section--gradient" >
       <div className="container" style={{padding: '30px 0', minHeight:'100dvh'}}>
@@ -45,7 +45,7 @@ Huntington Beach, CA 92649<br />
       </div>
       <div className="spacer33"></div> 
 
-      <Link to="/" className="button">
+      <Link to="/?pro=true" className="button">
         <RiArrowLeftSLine className="icon -left" />
         Back to Homepage
       </Link>
@@ -68,7 +68,7 @@ Huntington Beach, CA 92649<br />
     </section>
     
     
-    // </Layout>
+     </Layout>
   );
 };
 

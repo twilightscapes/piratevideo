@@ -90,7 +90,7 @@ const HomePage = ({ location }) => {
 <span style={{fontSize:'110%'}}>Watch videos on your tv without ads!</span>
               <br /><br />
               <span style={{fontSize:'80%'}}>Create your own shareable social video links with
-              <br /><br />
+              <br />
                custom photo, video titles, and start/stop times.</span>
 
 
@@ -138,9 +138,9 @@ const HomePage = ({ location }) => {
 
 
 <br />
-<a className="button" href="https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU" style={{maxWidth:'80%', margin:'0 auto'}}>Donate to get Pirate Video Pro features</a>
+<a className="button" href="https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU" style={{maxWidth:'80%', margin:'0 auto'}}>Pirate is Donation-Ware <br /> Donate to unlock custom photos and titles</a>
 <br /><br />
-<Link state={{modal: true}}  to="/contact/" className="" style={{margin:'', textDecoration:'none'}}>Want your own copy of pirate?</Link>
+<Link state={{modal: true}}  to="/contact/" className="" style={{margin:'', textDecoration:'none'}}>Want your own white-label version of pirate?</Link>
 {/* <form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="hosted_button_id" value="8XNKZ3PTVQKPU" />
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />

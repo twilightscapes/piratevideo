@@ -8,7 +8,6 @@ contactname: true
 contactphone: false
 contactupload: false
 scrollable: false
-uploadtext: JPG preferred - (1600px wide)
+uploadtext: ""
 excludeFromRSS: true
 ---
-Contact me if you can
