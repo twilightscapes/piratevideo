@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
 import { Link } from "gatsby-plugin-modal-routing-4";
@@ -23,7 +23,17 @@ const HomePage = ({ location }) => {
           // Get query parameter value
   const queryParams = new URLSearchParams(location.search);
   const hidePirate = queryParams.get('hidePirate') === 'true';
-  const showPro = queryParams.get('showPro') === 'true';
+
+
+  const showPro = useState(() => {
+    const storedShowPro = localStorage.getItem('showPro');
+    return storedShowPro !== null ? JSON.parse(storedShowPro) : false;
+});
+
+// Effect to update local storage when showPro changes
+useEffect(() => {
+    localStorage.setItem('showPro', JSON.stringify(showPro));
+}, [showPro]);
   
   return (
     <Layout>
@@ -35,6 +45,7 @@ const HomePage = ({ location }) => {
         <VideoPlayer location={location} />
 
         {!hidePirate && !showPro && !isRunningStandalone() && (
+        
 <>
 
         <div

@@ -41,7 +41,11 @@ const handleCustomImageChange = (event) => {
     updateQueryString({ customImage: value });
 };
 
-
+// Effect to update localStorage and showPro state when proParam changes
+useEffect(() => {
+    setShowPro(proParam);
+    localStorage.setItem('showPro', JSON.stringify(proParam));
+}, [proParam]);
 
     const [seoTitle, setSeoTitle] = useState(seoTitleParam);
     
