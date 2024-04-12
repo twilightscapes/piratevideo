@@ -641,18 +641,18 @@ height:'0',
             style={{
                 padding: '.4vh .3vw',
                 minWidth: '140px',
-                width: '100%',
-                // width: expanded ? '350px' : '100%', // 80% width when expanded
+                // width: '100%',
+                width: expanded ? '350px' : '100%', // 80% width when expanded
                 maxWidth: '800px',
                 textAlign: 'center',
                 fontSize: 'clamp(.8rem,1.4vw,1rem)',
                 background: expanded ? 'rgba(0,0,0,.8)' : 'rgba(0,0,0,.1)',
                 color: expanded ? '#fff' : 'inherit',
-                // position: expanded ? 'absolute' : 'static',
-                // top: expanded ? '60px' : 'inherit',
-                // left: expanded ? 'auto' : 'auto',
+                position: expanded ? 'absolute' : 'static',
+                top: expanded ? '60px' : 'inherit',
+                left: expanded ? 'auto' : 'auto',
                 margin: '0 auto',
-                // border: expanded ? '2px solid var(--theme-ui-colors-siteColor)' : 'inherit',
+                border: expanded ? '2px solid var(--theme-ui-colors-siteColor)' : 'inherit',
                 transition: 'opacity .4s ease-in-out',
                 opacity: isVideoActive ? 1 : 0.4
             }}
