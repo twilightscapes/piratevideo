@@ -30,10 +30,7 @@ const HomePage = ({ location }) => {
     return storedShowPro !== null ? JSON.parse(storedShowPro) : false;
 });
 
-// Effect to update local storage when showPro changes
-useEffect(() => {
-    localStorage.setItem('showPro', JSON.stringify(showPro));
-}, [showPro]);
+
   
   return (
     <Layout>
@@ -44,7 +41,7 @@ useEffect(() => {
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!hidePirate && !showPro && !isRunningStandalone() && (
+        {!hidePirate && !isRunningStandalone() && (
         
 <>
 
