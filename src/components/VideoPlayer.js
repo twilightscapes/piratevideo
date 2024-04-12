@@ -24,6 +24,7 @@ const VideoPlayer = ({ location }) => {
     const [customImage, setCustomImage] = useState("");
 
     const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
+    
     const [showBlocker, setShowBlocker] = useState(false);
 
     const [hideEditor, setHideEditor] = useState(false); // Initialize to true
@@ -443,7 +444,7 @@ height:'0',
                                 title="Paste Video Link"
                                 value={youtubelink}
                                 onChange={handleInputChange}
-                                style={{ padding: '.5vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)',  }}
+                                style={{ padding: '.5vh .2vw', minWidth:'105px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)',  }}
                                 placeholder="Paste Link"
                                 className="youtubelinker"
                                 aria-label="Paste Link To Video"
@@ -604,7 +605,7 @@ height:'0',
 
 
 
-<div id="pastebox" style={{ display: 'flex', flexDirection:'row', gap: '2vw', alignItems: 'center', width:'', margin:'', border:'0px solid red' }}>
+<div id="pastebox" style={{ display: 'flex', flexDirection:'row', gap: '2vw', alignItems: 'center', justifyContent:'center', width:'100%', margin:'', border:'0px solid red' }}>
 
 
 
@@ -640,6 +641,7 @@ height:'0',
             style={{
                 padding: '.4vh .3vw',
                 minWidth: '140px',
+                width: '100%',
                 // width: expanded ? '350px' : '100%', // 80% width when expanded
                 maxWidth: '800px',
                 textAlign: 'center',
