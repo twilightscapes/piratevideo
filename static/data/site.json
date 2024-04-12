@@ -29,7 +29,7 @@
     },
     "proOptions": {
       "showModals": false,
-      "showContact": false,
+      "showContact": true,
       "showResume": false,
       "startUrl": "/",
       "showPopup": false,

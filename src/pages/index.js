@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
+import { Link } from "gatsby-plugin-modal-routing-4";
 import VideoPlayer from "../components/VideoPlayer";
 import ReactPlayer from 'react-player/lazy';
 import { Helmet } from "react-helmet";
@@ -56,7 +57,7 @@ const HomePage = ({ location }) => {
         }}
       >
 
-{/* <StaticImage src="../../static/assets/screen-mirroring-badges.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-10vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
+
 
 {/* <StaticImage src="../../static/assets/free-star.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-28vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
 
@@ -90,7 +91,7 @@ const HomePage = ({ location }) => {
               <br /><br />
               <span style={{fontSize:'80%'}}>Create your own shareable social video links with
               <br /><br />
-               custom thumbnail, titles, and start/stop times</span>
+               custom photo, video titles, and start/stop times.</span>
 
 
 
@@ -121,7 +122,34 @@ const HomePage = ({ location }) => {
     height="100%"
               />
 
-<span style={{ margin: "2vh auto 5px auto", fontSize: "120%" }}>Pirate Video is a Personal Web App (PWA) - install for FREE!</span>
+
+
+
+{/* https://www.paypal.com/ncp/payment/5L797N6GMA93W */}
+
+{/* <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="99GULJ7R9T68W" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form> */}
+
+
+
+
+<br />
+<a className="button" href="https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU" style={{maxWidth:'80%', margin:'0 auto'}}>Donate to get Pirate Video Pro features</a>
+<br /><br />
+<Link state={{modal: true}}  to="/contact/" className="" style={{margin:'', textDecoration:'none'}}>Want your own copy of pirate?</Link>
+{/* <form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="8XNKZ3PTVQKPU" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form> */}
+
+
+<br />
+<p style={{ margin: "2vh auto 5px auto", padding:'0 5px', fontSize: "120%", lineHeight:'200%' }}>Pirate Video is a Personal Web App (PWA) &nbsp; Install for FREE!</p>
 <div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '100%', position:'relative'}}>
 
 Just click: 
@@ -140,8 +168,8 @@ Just click:
               {/* <br />
               <a href="https://pirateweb.org/about" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>About PIRATE</a> */}
 
-
-
+<br /><br />
+<StaticImage src="../../static/assets/screen-mirroring-badges.webp" alt="Works With Apple AirPlay" style={{height:'80%', width:'80%', position:'relative', zIndex:'0', bottom:'', right:'', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} />
 
             </div>
             
