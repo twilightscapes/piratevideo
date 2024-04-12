@@ -22,8 +22,8 @@ const HomePage = ({ location }) => {
 
           // Get query parameter value
   const queryParams = new URLSearchParams(location.search);
-  const hideEditor = queryParams.get('hideEditor') === 'true';
-
+  const hidePirate = queryParams.get('hidePirate') === 'true';
+  const showPro = queryParams.get('showPro') === 'true';
   
   return (
     <Layout>
@@ -34,7 +34,7 @@ const HomePage = ({ location }) => {
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!hideEditor && !isRunningStandalone() && (
+        {!hidePirate && !showPro && !isRunningStandalone() && (
 <>
 
         <div

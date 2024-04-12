@@ -2,7 +2,7 @@ import React from "react";
 import Seo from "../components/seo";
 import Layout from "../components/siteLayout";
 import { Link } from "gatsby"
-import { RiArrowLeftSLine, RiCheckboxCircleLine } from "react-icons/ri"
+import { RiArrowLeftSLine } from "react-icons/ri"
 
 
 const NoThanks = () => {

@@ -27,7 +27,7 @@ const VideoPlayer = ({ location }) => {
     
     const [showBlocker, setShowBlocker] = useState(false);
 
-    const [hideEditor, setHideEditor] = useState(false); // Initialize to true
+    const [hidePirate, setHideEditor] = useState(false); // Initialize to true
 
 
 
@@ -102,7 +102,7 @@ const handleCustomImageChange = (event) => {
                 setControls(checked);
             } else if (name === 'autoplay') {
                 setAutoplay(checked);
-            } else if (name === 'hideEditor') {
+            } else if (name === 'hidePirate') {
                 setHideEditor(checked); 
             } else if (name === 'showBlocker') {
                 setShowBlocker(checked); 
@@ -133,7 +133,7 @@ const handleCustomImageChange = (event) => {
             controls, 
             autoplay, // Here, autoplay is already a boolean value
             seoTitle, 
-            hideEditor, 
+            hidePirate, 
             showBlocker 
         });
     };
@@ -147,7 +147,7 @@ const handleCustomImageChange = (event) => {
             setAutoplay(autoplayParam === 'true');
         }
         // Declare hideEditorParam and showBlockerParam variables
-        const hideEditorParam = queryParams.get('hideEditor');
+        const hideEditorParam = queryParams.get('hidePirate');
         const showBlockerParam = queryParams.get('showBlocker');
         // Update hideEditor if present in query parameters
         if (hideEditorParam !== null) {
@@ -168,7 +168,7 @@ const handleCustomImageChange = (event) => {
             controls: controlsParam,
             autoplay: autoplayParam === undefined ? false : autoplayParam,
             seoTitle: seoTitleParam,
-            hideEditor: hideEditorParam === null ? false : hideEditorParam === 'true',
+            hidePirate: hideEditorParam === null ? false : hideEditorParam === 'true',
             // showBlocker: showBlockerParam === null ? false : showBlockerParam === 'true',
         });
     }, [autoplayParam, controlsParam, startTimeParam, stopTimeParam, loopParam, muteParam, seoTitleParam, videoUrlParam, queryParams]);
@@ -192,7 +192,7 @@ const handleCustomImageChange = (event) => {
         event.preventDefault();
         if (isValidURL(youtubelink)) {
             if ((startTime === "" || !isNaN(parseFloat(startTime))) && (stopTime === "" || !isNaN(parseFloat(stopTime)))) {
-                updateQueryString({ video: youtubelink, start: startTime, stop: stopTime, loop, mute, controls, seoTitle, showBlocker, hideEditor }); 
+                updateQueryString({ video: youtubelink, start: startTime, stop: stopTime, loop, mute, controls, seoTitle, showBlocker, hidePirate }); 
             } else {
                 alert('Please enter valid values for start and stop times.');
             }
@@ -226,7 +226,7 @@ const handleCopyAndShareButtonClick = async () => {
         controls,
         autoplay: autoplayParam, // Use the initial autoplay value
         seoTitle,
-        hideEditor,
+        hidePirate,
         // showBlocker,
         customImage, // Include customImage parameter without checking for undefined or empty
     };
@@ -323,11 +323,11 @@ const updateQueryString = (values) => {
 
 
 
-    const handleHideEditorChange = (event) => {
-        const newValue = event.target.checked; // Use the checked value directly
-        // setHideEditor(!newValue); // Invert the value for state update
-        updateQueryString({ hideEditor: newValue ? 'true' : 'false' }); // Update query string accordingly
-    };
+    // const handleHideEditorChange = (event) => {
+    //     const newValue = event.target.checked; // Use the checked value directly
+    //     // setHideEditor(!newValue); // Invert the value for state update
+    //     updateQueryString({ hidePirate: newValue ? 'true' : 'false' }); // Update query string accordingly
+    // };
     
 
     // Function to handle show blocker change
@@ -394,7 +394,7 @@ const handleAutoplayChange = (event) => {
 
 <div className="font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', transition: 'all .4s ease-in-out', marginTop: showNav ? '0' : '0',
 height:'0',
- height: hideEditor ? '0' : '50px', 
+ height: hidePirate ? '0' : '50px', 
 // background: 'var(--theme-ui-colors-headerColor)',
  }}>
 
@@ -413,12 +413,12 @@ height:'0',
         padding: '4px 20px',
         width: '100%',
         transform:'none',
-        transform: hideEditor ? 'translateY(-100vh)' : 'none',
+        transform: hidePirate ? 'translateY(-100vh)' : 'none',
         transition: 'transform 0.4s ease-in-out',
         background: 'var(--theme-ui-colors-headerColor)',
         // color:'--theme-ui-colors-headerColorText'
         height:'0',
-        height: hideEditor ? '0' : 'auto'
+        height: hidePirate ? '0' : 'auto'
 
       }}
     >
@@ -730,7 +730,7 @@ height:'0',
     ) : (
 
 
-<div className="font public1" style={{display: hideEditor ? 'flex' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
+<div className="font public1" style={{display: hidePirate ? 'flex' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
 // height: hideEditor ? '0' : '50px', 
 // background: 'var(--theme-ui-colors-headerColor)',
  }}>
