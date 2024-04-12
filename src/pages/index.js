@@ -30,7 +30,10 @@ const HomePage = ({ location }) => {
     return storedShowPro !== null ? JSON.parse(storedShowPro) : false;
 });
 
-
+// Effect to update local storage when showPro changes
+useEffect(() => {
+    localStorage.setItem('showPro', JSON.stringify(showPro));
+}, [showPro]);
   
   return (
     <Layout>
