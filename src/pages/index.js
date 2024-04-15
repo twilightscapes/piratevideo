@@ -55,7 +55,7 @@ const HomePage = ({ location }) => {
           // display: isMenuOpen ? "block" : "none",
           display: "flex",
           background: "var(--theme-ui-colors-headerBackground)",
-          backgroundColor: "#222",
+          backgroundColor: "",
           width: "100dvw",
         }}
       >
