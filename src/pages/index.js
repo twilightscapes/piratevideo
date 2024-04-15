@@ -106,7 +106,7 @@ const HomePage = ({ location }) => {
 {/* <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4' */}
 
 
-              <ReactPlayer ref={playerRef} url='https://youtu.be/Nb_ABT8onTM'
+              <ReactPlayer ref={playerRef} url='https://youtu.be/dOHZv-hpIhA'
               config={{
     youtube: {
       playerVars: { showinfo: 0, autoplay: 1, mute: 1 }

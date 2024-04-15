@@ -3,12 +3,15 @@ import Seo from "../components/seo";
 import Layout from "../components/siteLayout";
 import { Link } from "gatsby"
 import { RiArrowLeftSLine } from "react-icons/ri"
-
+import { Helmet } from "react-helmet";
 
 const NoThanks = () => {
       return (
 
  <Layout className="thanks-page">
+        <Helmet>
+        <body id="body" className="homepage youtube" />
+      </Helmet>
  <Seo title={`Thanks for being a Pirate!`} />
 
 <section className="outer section section--gradient" >
@@ -47,7 +50,7 @@ Huntington Beach, CA 92649<br />
 
       <Link to="/?pro=true" className="button">
         <RiArrowLeftSLine className="icon -left" />
-        Back to Homepage
+        REDEEM FREE PIRATE PRO
       </Link>
 
 
