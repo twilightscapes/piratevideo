@@ -170,7 +170,7 @@ useEffect(() => {
             loop: loopParam,
             mute: muteParam,
             controls: controlsParam,
-            autoplay: autoplayParam === undefined ? false : autoplayParam,
+            autoplay: autoplayParam === undefined ? true : autoplayParam,
             seoTitle: seoTitleParam,
             hidePirate: hideEditorParam === null ? false : hideEditorParam === 'true',
             // showBlocker: showBlockerParam === null ? false : showBlockerParam === 'true',
@@ -761,7 +761,7 @@ height:'0',
     loop={loop}
     muted={mute} // Use muted instead of mute
     volume={mute ? 0 : 1}
-    autoPlay={autoplay}
+    autoPlay={true}
     onStart={() => console.log('onStart')}
     onPause={() => setIsPlaying(false)}
     onEnded={() => setIsPlaying(false)}
