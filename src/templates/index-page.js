@@ -282,7 +282,7 @@ const playerRef = useRef(null);
 
 
 
-http://localhost:8000/?video=https%3A%2F%2Fwww.youtube.com%2Flive%2FkYiSnlc-XrE%3Fsi%3D0hMPOoPqR53deng_&loop=false&mute=false&controls=true&autoplay=false&showBlocker=false
+
     
     {/*  SPECIAL CONTENT */}
     

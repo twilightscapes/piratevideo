@@ -25,7 +25,7 @@ const HomePage = ({ location }) => {
   const hidePirate = queryParams.get('hidePirate') === 'true';
   const proParam = queryParams.get('pro') === 'true';
 
-  const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
+  const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || true);
   
   return (
     <Layout>
@@ -36,7 +36,7 @@ const HomePage = ({ location }) => {
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!hidePirate && !showPro && !isRunningStandalone() && (
+        {!hidePirate && showPro && !isRunningStandalone() && (
         
 <>
 
@@ -141,7 +141,7 @@ const HomePage = ({ location }) => {
 
 
 <br />
-<a className="button" href="https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU" style={{maxWidth:'80%', margin:'0 auto'}}>Pirate is Donation-Ware <br /> Donate to unlock custom photos and titles</a>
+{/* <a className="button" href="https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU" style={{maxWidth:'80%', margin:'0 auto'}}>Enjoy this tool?<br /> Pirate is Donation-Ware <br /> Donate to developer</a> */}
 <br /><br />
 <Link state={{modal: true}}  to="/contact/" className="" style={{margin:'', textDecoration:'none'}}>Want your own white-label version of Pirate?</Link>
 {/* <form action="https://www.paypal.com/donate" method="post" target="_top">
