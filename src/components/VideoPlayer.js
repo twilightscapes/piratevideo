@@ -23,7 +23,7 @@ const VideoPlayer = ({ location }) => {
     
     const [customImage, setCustomImage] = useState("");
 
-    const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || false);
+    const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || true);
     
     const [showBlocker, setShowBlocker] = useState(false);
 

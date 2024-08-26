@@ -1,10 +1,6 @@
 {
   "menuItems": [
     {
-      "menutitle": "Get Pirate Video Pro",
-      "url": "https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU"
-    },
-    {
       "menutitle": "Donate to Developer",
       "url": "https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU"
     }
