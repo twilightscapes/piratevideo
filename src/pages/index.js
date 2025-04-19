@@ -339,7 +339,7 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="Ad-Free YouTube Videos - Customize loops & start/stop "
+      description="AdBlock YouTube Videos - Create customize start/stop loops"
       image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://adblock.video/assets/default-og-image.webp')}
     />
   );
