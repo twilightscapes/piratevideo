@@ -195,65 +195,7 @@ Just click:
               <span style={{ margin: "2vh auto", fontSize: "160%" }}>Install Now Free!</span>
               <br /><br /><br />
           </div> */}
-          <div className="flexcheek mob2 print" style={{ position: "relative", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
 
-
-
-            <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "0px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
-
-              
-              <span style={{ margin: "2vh auto 5px auto", fontSize: "160%" }}>Install Pirate Video Now!</span>
-              
-              {/* <span style={{ margin: "2vh auto", fontSize: "90%" }}>(Click <span style={{position:'relative', display:'block', left:'1%',}}><MdOutlineIosShare style={{fontSize:'30px'}} /></span> - then 'Save To Homepage')</span> */}
-
-
-<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 40px', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: 'clamp(1rem,1.4vw,1.5rem)', position:'relative'}}>
-
-Click: 
-<div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'24px'}} /></div>
-
-  <span style={{fontSize:'120%'}}>+</span> <span style={{display:'block'}}>"Add To Home Screen"</span>
-
-
-
-</div>
-
-<br />
-
-
-
-
-
-
-{/* https://youtu.be/xIAZ-vHl4aY */}
-
-{/* <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4' */}
-
-
-              <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4'
-              config={{
-                youtube: {
-                  playerVars: { showinfo: 0, autoplay: 1, mute: 1 }
-                }
-              }}
-              playsinline
-              playing
-              loop
-              autoPlay
-              muted
-              style={{
-                width:'100%',
-                height:'100%',
-              }}
-                width="100%"
-                height="100%"
-                          />
-
-    
-
-
-            </div>
-          </div>
           {/* <div className="flexcheek mob2 print" style={{ position: "", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
             <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "10px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
               <br />
