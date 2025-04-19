@@ -1,11 +1,11 @@
 {
   "menuItems": [
     {
-      "menutitle": "About PIRATE",
+      "menutitle": "How To Use PIRATE",
       "url": "/help"
     },
     {
-      "menutitle": "Install PWA",
+      "menutitle": "How To Install PWA",
       "url": "/install"
     },
     {
