@@ -257,7 +257,7 @@ Click:
 const SeoWrapper = ({ location }) => {
   const queryParams = new URLSearchParams(location.search);
   const videoUrlParam = queryParams.get('video');
-  const seoTitleParam = queryParams.get('seoTitle') || "Watch this video and create sharable video loops";
+  const seoTitleParam = queryParams.get('seoTitle') || "Watch this video or create your own sharable video loop";
   const customImageParam = queryParams.get('customImage'); 
 
   // Function to extract video ID from YouTube URL

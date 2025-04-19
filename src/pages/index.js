@@ -317,7 +317,7 @@ Just click:
 const SeoWrapper = ({ location }) => {
   const queryParams = new URLSearchParams(location.search);
   const videoUrlParam = queryParams.get('video');
-  const seoTitleParam = queryParams.get('seoTitle') || "Watch this video and create sharable start/stop video loops";
+  const seoTitleParam = queryParams.get('seoTitle') || "Watch this video or create your own sharable video loops";
   const customImageParam = queryParams.get('customImage'); 
 
   // Function to extract video ID from YouTube URL
@@ -339,7 +339,7 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="AdBlock Video ▶ (FREE) - SKIP the YouTube Ads!"
+      description="AdBlock Video ▶ (it's FREE) - SKIP the YouTube Ads!"
       image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://adblock.video/assets/default-og-image.webp')}
     />
   );
