@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
@@ -317,20 +316,23 @@ Just click:
 const SeoWrapper = ({ location }) => {
   const queryParams = new URLSearchParams(location.search);
   const videoUrlParam = queryParams.get('video');
-  const seoTitleParam = queryParams.get('seoTitle') || "☠ Pirate Video | Play ▶ ";
+  const seoTitleParam = queryParams.get('seoTitle') || "☠ Pirate YouTube Player ";
   const customImageParam = queryParams.get('customImage'); 
 
   // Function to extract video ID from YouTube URL
   const extractVideoId = (url) => {
-    if (!url) {
-      return null;
+    if (!url) return null;
+    try {
+      const urlObj = new URL(url);
+      if (urlObj.hostname.includes('youtube.com')) {
+        return urlObj.searchParams.get('v');
+      } else if (urlObj.hostname.includes('youtu.be')) {
+        return urlObj.pathname.slice(1);
+      }
+    } catch (error) {
+      console.error('Invalid URL:', url);
     }
-    /* eslint-disable no-useless-escape */
-    const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-    const match = url.match(regExp);
-    const videoId = match ? match[1] : null;
-    return videoId;
-    /* eslint-disable no-useless-escape */
+    return null;
   };
 
   // Extract video ID
@@ -339,7 +341,7 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="Pirate Video - NO YouTube Ads"
+      description="Ad-Free YouTube Videos, Customize with, video titles, and start/stop times. "
       image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://piratevideo.netlify.app/assets/default-og-image.webp')}
     />
   );
