@@ -141,7 +141,7 @@ style={{
 
 
 <br />
-<p style={{ margin: "2vh auto 5px auto", padding:'0 5px', fontSize: "120%", lineHeight:'200%' }}>Pirate Video is a Personal Web App (PWA) &nbsp; Install for FREE!</p>
+<p style={{ margin: "2vh auto 5px auto", padding:'0 5px', fontSize: "120%", lineHeight:'200%' }}>AdBlock Video is a Personal Web App (PWA) &nbsp; Install for FREE!</p>
 <div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 0', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: '100%', position:'relative'}}>
 
 Just click: 
