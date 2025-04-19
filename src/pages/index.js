@@ -276,7 +276,7 @@ Just click:
   
 
 
-  <a href="https://pirateweb.org/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
+  <a href="https://adblock.video/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
   <br />
 
 
@@ -339,8 +339,8 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="Ad-Free YouTube Videos, Customize with, video titles, and start/stop times. "
-      image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://piratevideo.netlify.app/assets/default-og-image.webp')}
+      description="Ad-Free YouTube Videos - Customize loops & start/stop "
+      image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://adblock.video/assets/default-og-image.webp')}
     />
   );
 };
