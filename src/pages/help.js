@@ -1,8 +1,7 @@
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
-import { Link } from "gatsby-plugin-modal-routing-4";
 import VideoPlayer from "../components/VideoPlayer";
 import ReactPlayer from 'react-player/lazy';
 import { Helmet } from "react-helmet";
@@ -10,7 +9,7 @@ import { Helmet } from "react-helmet";
 
 import { MdOutlineIosShare } from "react-icons/md";
 import { StaticImage } from "gatsby-plugin-image"
-const HomePage = ({ location }) => {
+const Help = ({ location }) => {
   const playerRef = useRef(null);
           // Function to check if the app is running in standalone mode
           function isRunningStandalone() {
@@ -20,52 +19,42 @@ const HomePage = ({ location }) => {
             return ;
         }
 
-          // Get query parameter value
-  const queryParams = new URLSearchParams(location.search);
-  const hidePirate = queryParams.get('hidePirate') === 'true';
-  const proParam = queryParams.get('pro') === 'true';
-
-  const [showPro, setShowPro] = useState(proParam || (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('showPro'))) || true);
-  
   return (
     <Layout>
       <Helmet>
-        <body id="body" className="homepage youtube" />
+        <body id="body" className="youtube" />
       </Helmet>
       <SeoWrapper location={location} />
       <div className='player-wrapper' style={{height:'100%', aspectRatio:'16/9'}}>
         <VideoPlayer location={location} />
 
-        {!hidePirate && showPro && !isRunningStandalone() && (
-        
-<>
-
-        <div
-        className="menusnapp"
-        style={{
-          position: "relative",
-          zIndex: "0",
-          top: "",
-          gap: "0",
-          padding: "5vh 0",
-          alignItems: "start",
-          animation:'fadeIn 1s forwards',
-          animationDelay:'1s',
-          opacity:'0',
-          // display: isMenuOpen ? "block" : "none",
-          display: "flex",
-          background: "var(--theme-ui-colors-headerBackground)",
-          backgroundColor: "",
-          width: "100dvw",
-        }}
-      >
+        {!isRunningStandalone() ? (
 
 
+<div
+className="menusnapp"
+style={{
+  position: "absolute",
+  zIndex: "0",
+  top: "6vh",
+  gap: "0",
+  padding: "2vh 2vw",
+  alignItems: "center",
+  animation:'fadeIn 1s forwards',
+  animationDelay:'1s',
+  opacity:'0',
+  // display: isMenuOpen ? "block" : "none",
+  display: "flex",
+  background: "var(--theme-ui-colors-headerBackground)",
+  backgroundColor: "#222",
+  width: "100dvw",
+}}
+>
 
-{/* <StaticImage src="../../static/assets/free-star.webp" alt="Works With Apple AirPlay" style={{height:'50%', width:'50%', position:'absolute', zIndex:'0', bottom:'-28vh', right:'-5vw', border:'0px solid !important', objectFit:'contain', margin:'0 auto'}} /> */}
 
 
-        <div id="" className="flexbutt font" style={{ display: "none", gap: "", justifyContent: "center", alignItems: "center", margin: "0 0", padding: "0", position: "relative", width: "100vw" }}>
+
+        <div id="" className="flexbutt font" style={{ display: "", gap: "", justifyContent: "center", alignItems: "center", margin: "0 0", padding: "0", position: "relative", width: "100vw" }}>
           {/* <div style={{ minWidth: "25vw", maxHeight: "15vh", textAlign: "center", color: "#fff" }}>
             <PirateLogo style={{ minWidth: "", maxHeight: "15vh", position: "", top: "", left: "" }} />
             the web revolution
@@ -198,12 +187,96 @@ Just click:
             </div>
           </div> */}
         </div>
-        {/* <br /><br /><br /> */}
 
-      </div>
-      </>
+          {/* <div style={{ minWidth: "25vw", maxHeight: "15vh", textAlign: "center", color: "#fff" }}>
+            <PirateLogo style={{ minWidth: "", maxHeight: "15vh", position: "", top: "", left: "" }} />
+            the web revolution
+            <br /><br /><br />
+              <span style={{ margin: "2vh auto", fontSize: "160%" }}>Install Now Free!</span>
+              <br /><br /><br />
+          </div> */}
+          <div className="flexcheek mob2 print" style={{ position: "relative", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
 
 
+
+            <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "0px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
+
+              
+              <span style={{ margin: "2vh auto 5px auto", fontSize: "160%" }}>Install Pirate Video Now!</span>
+              
+              {/* <span style={{ margin: "2vh auto", fontSize: "90%" }}>(Click <span style={{position:'relative', display:'block', left:'1%',}}><MdOutlineIosShare style={{fontSize:'30px'}} /></span> - then 'Save To Homepage')</span> */}
+
+
+<div className="font" style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 40px', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: 'clamp(1rem,1.4vw,1.5rem)', position:'relative'}}>
+
+Click: 
+<div style={{position:'relative', display:'block', left:'',}}><MdOutlineIosShare style={{fontSize:'24px'}} /></div>
+
+  <span style={{fontSize:'120%'}}>+</span> <span style={{display:'block'}}>"Add To Home Screen"</span>
+
+
+
+</div>
+
+<br />
+
+
+
+
+
+
+{/* https://youtu.be/xIAZ-vHl4aY */}
+
+{/* <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4' */}
+
+
+              <ReactPlayer ref={playerRef} url='/assets/PirateInstall.mp4'
+              config={{
+                youtube: {
+                  playerVars: { showinfo: 0, autoplay: 1, mute: 1 }
+                }
+              }}
+              playsinline
+              playing
+              loop
+              autoPlay
+              muted
+              style={{
+                width:'100%',
+                height:'100%',
+              }}
+                width="100%"
+                height="100%"
+                          />
+
+    
+
+
+            </div>
+          </div>
+          {/* <div className="flexcheek mob2 print" style={{ position: "", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
+            <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "10px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
+              <br />
+              <span style={{ margin: "2vh auto", fontSize: "160%" }}>Get PIRATE</span>
+              
+              <br />
+              Web, Social &amp; Video Media
+              <br />
+              Combined into your own app
+            <br />
+              <br />
+              Get the full version free!
+              <a href="https://pirateweb.org/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Become a PIRATE!</a>
+              <br /><br />
+            </div>
+          </div> */}
+        </div>
+
+
+
+) : (
+
+""
 
   )}
 
@@ -276,7 +349,7 @@ Just click:
   
 
 
-  <a href="https://pirateweb.org/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
+  <a href="https://piratevideo.netlify.app/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
   <br />
 
 
@@ -345,4 +418,4 @@ const SeoWrapper = ({ location }) => {
   );
 };
 
-export default HomePage;
+export default Help;

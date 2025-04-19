@@ -1,6 +1,14 @@
 {
   "menuItems": [
     {
+      "menutitle": "About PIRATE",
+      "url": "/help"
+    },
+    {
+      "menutitle": "Install PWA",
+      "url": "/install"
+    },
+    {
       "menutitle": "Donate to Developer",
       "url": "https://www.paypal.com/donate/?hosted_button_id=8XNKZ3PTVQKPU"
     }
