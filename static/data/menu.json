@@ -1,11 +1,11 @@
 {
   "menuItems": [
     {
-      "menutitle": "How To Use PIRATE",
+      "menutitle": "How To Use AdBlock",
       "url": "/help"
     },
     {
-      "menutitle": "How To Install PWA",
+      "menutitle": "Install AdBlock PWA",
       "url": "/install"
     },
     {

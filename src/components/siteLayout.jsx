@@ -317,7 +317,7 @@ const Layout = ({ children }) => {
             <ul className="sidebarMenuInner post-card panel" style={{ maxWidth: '260px', position: 'absolute', right: '0', display: '', justifyContent: '' }}>
 
               <li className="grad logo" style={{ position: 'relative', maxHeight: '100px', width: 'auto', display: 'flex', justifyContent: 'center' }}>
-                <AnchorLink className="sidelogo" to="/" state={showModals ? { modal: true } : {}} name="homereturn" style={{ position: '', display: 'block', maxWidth: '150px', height: '60px', border: '0px solid' }} aria-label="Link to Top" title="Back to Top">
+                <AnchorLink className="sidelogo" to="/" state={showModals ? { modal: true } : {}} name="homereturn" style={{ position: '', display: 'block', maxWidth: '150px', width:'100%', height: '60px', border: '0px solid' }} aria-label="Link to Top" title="Back to Top">
                   {iconimage ? (
                     <img src={iconimage} alt={companyname} width="120" height="60" style={{ maxHeight: '60px', border: 'none' }} />
                   ) : (

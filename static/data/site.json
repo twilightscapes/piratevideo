@@ -1,7 +1,7 @@
 {
   "meta": {
-    "iconimage": "/assets/logo.svg",
-    "companyname": "Pirate",
+    "iconimage": "/assets/adblock-logo.svg",
+    "companyname": "AdBlock",
     "siteUrl": "https://adblock.video",
     "featureOptions": {
       "showDefault": true,
@@ -18,7 +18,7 @@
       "defaultCollection": "Favorites"
     },
     "twitterUsername": "toddlambert",
-    "titleDefault": "PIRATE",
+    "titleDefault": "Ad-free YouTube",
     "postcount": 9,
     "homecount": 3,
     "magicOptions": {
@@ -42,7 +42,7 @@
       "showPWA": true
     },
     "titleTemplate": "%s",
-    "title": "Pirate YouTube",
+    "title": "AdBlock Video",
     "language": {
       "dicContact": "Contact",
       "dicSignUpText": "Sign Up - Enter your email",
@@ -80,13 +80,13 @@
       "dicViewArchive": "View Archive",
       "dicGallery": "Choose Collection"
     },
-    "image": "/assets/pirate-logo.svg",
+    "image": "",
     "navOptions": {
       "showNav": false,
       "showNav2": true,
       "showFooterMenu": false
     },
-    "description": "Pirate Video for the masses",
-    "icon512": "/assets/pirate-icon.svg"
+    "description": "AdBlock Video for the masses",
+    "icon512": "/assets/adblock-logo.svg"
   }
 }
