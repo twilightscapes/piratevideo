@@ -216,7 +216,7 @@ Click:
   
 
 
-  <a href="https://pirateweb.org/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
+  <a href="https://piratevideo.netlify.app/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh 1vw", maxWidth: "250px", margin: "30px auto", border:'1px solid ' }}>Get Your Ship Now!</a>
   <br />
 
 
@@ -279,8 +279,8 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="Pirate: revolutionizing the web"
-      image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://pirateyoutube.com/assets/default-og-image.webp')}
+      description="Pirate Video - NO YouTube Ads"
+      image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://piratevideo.netlify.app/assets/default-og-image.webp')}
     />
   );
 };
