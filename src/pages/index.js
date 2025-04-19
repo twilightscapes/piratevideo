@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
@@ -321,18 +322,15 @@ const SeoWrapper = ({ location }) => {
 
   // Function to extract video ID from YouTube URL
   const extractVideoId = (url) => {
-    if (!url) return null;
-    try {
-      const urlObj = new URL(url);
-      if (urlObj.hostname.includes('youtube.com')) {
-        return urlObj.searchParams.get('v');
-      } else if (urlObj.hostname.includes('youtu.be')) {
-        return urlObj.pathname.slice(1);
-      }
-    } catch (error) {
-      console.error('Invalid URL:', url);
+    if (!url) {
+      return null;
     }
-    return null;
+    /* eslint-disable no-useless-escape */
+    const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regExp);
+    const videoId = match ? match[1] : null;
+    return videoId;
+    /* eslint-disable no-useless-escape */
   };
 
   // Extract video ID
