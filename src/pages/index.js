@@ -339,7 +339,7 @@ const SeoWrapper = ({ location }) => {
   return (
     <Seo
       title={seoTitleParam}
-      description="Click to watch this AdFree video "
+      description="Click to watch this video Ad-free ▶"
       image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://adblock.video/assets/default-og-image.webp')}
     />
   );
