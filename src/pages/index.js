@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/siteLayout";
 import Seo from "../components/seo";
@@ -320,21 +319,32 @@ const SeoWrapper = ({ location }) => {
   const seoTitleParam = queryParams.get('seoTitle') || "Watch this video or create your own sharable video loops";
   const customImageParam = queryParams.get('customImage'); 
 
-  // Function to extract video ID from YouTube URL
-  const extractVideoId = (url) => {
-    if (!url) {
-      return null;
-    }
-    /* eslint-disable no-useless-escape */
-    const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-    const match = url.match(regExp);
-    const videoId = match ? match[1] : null;
-    return videoId;
-    /* eslint-disable no-useless-escape */
+  // Robust function to extract YouTube video ID from URL or ID
+  const extractVideoId = (input) => {
+    if (!input) return null;
+    // Direct video ID
+    if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+    // youtu.be/VIDEOID
+    let match = input.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+    if (match) return match[1];
+    // youtube.com/watch?v=VIDEOID
+    match = input.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+    if (match) return match[1];
+    // youtube.com/embed/VIDEOID or /v/VIDEOID
+    match = input.match(/\/(embed|v)\/([a-zA-Z0-9_-]{11})/);
+    if (match) return match[2];
+    // Last fallback: any 11-char ID in the string
+    match = input.match(/([a-zA-Z0-9_-]{11})/);
+    if (match) return match[1];
+    return null;
   };
 
-  // Extract video ID
   const videoId = extractVideoId(videoUrlParam);
+
+  // Debug log
+  if (typeof window !== "undefined") {
+    console.log("SeoWrapper videoUrlParam:", videoUrlParam, "videoId:", videoId);
+  }
 
   return (
     <Seo
